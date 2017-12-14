@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset={dede:global.cfg_soft_lang/}" />
+<title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field name='keywords'/}" />
+<meta name="description" content="{dede:field name='description' function='html2text(@me)'/}" />
+<link href="/skin/css/dedecms.css" rel="stylesheet" media="screen" type="text/css" />
+</head>
+<body class="articlelist">
+{dede:include filename="head.htm"/} 
+<!-- /header -->
+<div class="w980 center clear clr"> {dede:include filename="left.htm"/} 
+  
+  <!-- /页面右边 -->
+  <div id="right_diy">
+    <div class="right_nav">{dede:include filename="right_nav.htm"/}</div>
+    <div class="right_t_menu"> {dede:channel type='son' currentstyle="<a href='~typelink~' class='thisclass2'>~typename~</a>"} <a href='[field:typeurl/]'>[field:typename/]</a> {/dede:channel} </div>
+    <div class="right_body clear clr">
+      <div class="listbox clear clr mt1">
+        <ul class="ny_news_list">
+          {dede:list pagesize='15' titlelen='90'}
+          <li><a href="[field:arcurl/]"><img src="[field:picname/]" alt="[field:title/]"/></a>
+            <p class="ny_news_bt"><a href="[field:arcurl/]" >[field:title/]</a></p>
+            <p>[field:description function='cn_substr(@me,400)'/]......</p>
+            <p class="ny_news_more"><a href="[field:arcurl/]">阅读全文 ></a></p>
+            </td>
+          </li>
+          {/dede:list}
+        </ul>
+      </div>
+      <!-- /listbox -->
+      <div class="dede_pages clear clr">
+        <ul class="pagelist">
+          {dede:pagelist listitem="info,index,end,pre,next,pageno,option" listsize="5"/}
+        </ul>
+      </div>
+    </div>
+  </div>
+  <!-- /页面右边 --> 
+</div>
+{dede:include filename="footer.htm"/} 
+<!-- /footer -->
+</body>
+</html>

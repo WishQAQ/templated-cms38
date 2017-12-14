@@ -1,0 +1,46 @@
+<script src="/skin/js/jquery-1.10.2.min.js" type="text/javascript"></script>
+<script src="/skin/js/jquery.kinMaxShow-1.0.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(function(){
+	
+	$("#kinMaxShow").kinMaxShow();
+
+
+});
+
+</script>
+
+<div class="header_top"></div>
+<div class="header">
+  <div class="w980 center clear clr">
+    <div class="logo_l">
+      <div class="menu_bg">
+        <div class="w980 center clear clr">
+          <div id="navMenu">
+            <ul>
+              <li><a href='/'>首页</a></li>
+              {dede:channel type='top' row='5' currentstyle="
+              <li class='hover menu_ii'><a href='~typelink~' ~rel~>~typename~</a></li>
+              "}
+              <li class="menu_ii"><a href='[field:typeurl/]' [field:rel/]>[field:typename/]</a></li>
+              {/dede:channel}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="logo"><a href="/"><img src="/skin/images/logo.jpg" alt="{dede:global.cfg_webname/}"/></a></div>
+    <div class="logo_r">
+      <p class="logo_r01"><a href="/a/ruanzhuangdapeifuwu/" target="_blank">软装搭配服务</a> | 咨询热线: 159 2048 2283</p>
+      <p class="logo_r02">/ 专业 / 创新 / 共羸 /</p>
+    </div>
+  </div>
+</div>
+<div class="i_banner w980 center  clear clr">
+  <div id="kinMaxShow"> {dede:arclist row='10' orderby='id' typeid='17'}
+    <div><img src="[field:litpic/]"  alt="[field:fulltitle/]"></div>
+    {/dede:arclist} </div>
+</div>
+<div class="w980 center mt3 clear clr">
+  <div class="part0_top"><img src="/skin/images/center_logo.gif" alt="{dede:global.cfg_webname/}"/></div>
+</div>

@@ -1,0 +1,107 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<!--
+                       (0 0)
+   +-------------oOO----(_)----------------+
+   |           Powered By 织梦猫           |
+   |            www.dedemao.com            |
+   |        E-mail:admin@dedemao.com       |
+   +--------------------------oOO----------+
+                      |__|__|
+                       || ||
+                      ooO Ooo
+-->
+<meta http-equiv="Content-Type" content="text/html; charset={dede:global.cfg_soft_lang/}" />
+<title>{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:global.cfg_keywords/}" />
+<meta name="description" content="{dede:global.cfg_description/}" />
+<link href="/skin/css/dedecms.css" rel="stylesheet" media="screen" type="text/css" />
+<script language="javascript" type="text/javascript" src="{dede:global.cfg_cmsurl/}/include/dedeajax2.js"></script>
+<script language="javascript" type="text/javascript">
+<!--
+	$(function(){
+		$("a[_for]").mouseover(function(){
+			$(this).parents().children("a[_for]").removeClass("thisclass").parents().children("dd").hide();
+			$(this).addClass("thisclass").blur();
+			$("#"+$(this).attr("_for")).show();
+		});
+		$("a[_for=uc_member]").mouseover();
+		$("a[_for=flink_1]").mouseover();
+	});
+	
+	function CheckLogin(){
+	  var taget_obj = document.getElementById('_userlogin');
+	  myajax = new DedeAjax(taget_obj,false,false,'','','');
+	  myajax.SendGet2("{dede:global.cfg_cmspath/}/member/ajax_loginsta.php");
+	  DedeXHTTP = null;
+	}
+-->
+</script>
+</head>
+<body class="index">
+{dede:include filename="head_index.htm"/} 
+<!-- /header -->
+<div class="w980 center clear clr mt3">
+  <div class="part0 clear clr">
+    <div class="part0_top"><img src="/skin/images/center_logo.gif" alt="{dede:global.cfg_webname/}"/></div>
+    <div class="part0_list mt2">
+      <ul>
+        <li>{dede:type typeid='3'}<a href="[field:typelink/]"><img src="/skin/images/part0_01.jpg"/></a>{/dede:type}</li>
+        <li>{dede:type typeid='4'}<a href="[field:typelink/]"><img src="/skin/images/part0_02.jpg"/></a>{/dede:type}</li>
+        <li>{dede:type typeid='5'}<a href="[field:typelink/]"><img src="/skin/images/part0_03.jpg"/></a>{/dede:type}</li>
+        <li>{dede:type typeid='6'}<a href="[field:typelink/]"><img src="/skin/images/part0_04.jpg"/></a>{/dede:type}</li>
+      </ul>
+    </div>
+  </div>
+  <div class="part1 clear clr mt3">
+    <div class="part1_top">公司简介 & Introduction</div>
+    <div class="part1_body">{dede:myad name='gsjj'/}</div>
+  </div>
+  <div class="part1 clear clr mt3">
+    <div class="part1_top">服务方向 & SERVICE</div>
+    <div class="part1_body">{dede:myad name='fwfx'/}</div>
+  </div>
+  <div class="part2 clear clr mt3">
+    <div class="part2_top">
+      <div class="part2_l">
+        <div class="part2_n_top">{dede:type typeid='9'}<a href="[field:typelink/]" class="i_more">+ 更多</a>{/dede:type}新闻热点</div>
+      </div>
+      <div class="part2_r">
+        <div class="part2_n_top">{dede:type typeid='2'}<a href="[field:typelink/]" class="i_more">+ 更多</a>{/dede:type}工程案例</div>
+      </div>
+    </div>
+    <div class="part2_body clear clr">
+      <div class="part2_l">
+        <div class="inews_ttop mt1 clear clr"> {dede:arclist typeid='9' row='1' titlelen='50' infolen='110'  imgwidth='120' imgheight='120' flag ='p'} <a href="[field:arcurl/]" >[field:image/]</a> <span class="inews_bt"><a href="[field:arcurl /]">[field:title /]</a></span><br/>
+          [[field:pubdate function="MyDate('m-d',@me)"/]]<br/>
+          <span class="inews_ms">[field:info/]……</span><br/>
+          <span class="inews_more"><a href="[field:arcurl/]" >查看详细 +</a></span> {/dede:arclist} </div>
+        <div class="inews_list clear clr">
+          <ul>
+            {dede:arclist typeid='9' titlelen='70' row='6' orderby='id'}
+            <li><span>[[field:pubdate function="MyDate('y-m-d',@me)"/]]</span><a href="[field:arcurl /]">[field:title /]</a></li>
+            {/dede:arclist}
+          </ul>
+        </div>
+      </div>
+      <div class="part2_r">
+        <div class="inews_ttop mt1 clear clr"> {dede:arclist typeid='2' row='1' titlelen='50' infolen='110'  imgwidth='120' imgheight='120' flag ='p'} <a href="[field:arcurl/]" >[field:image/]</a> <span class="inews_bt"><a href="[field:arcurl /]">[field:title /]</a></span><br/>
+          [[field:pubdate function="MyDate('m-d',@me)"/]]<br/>
+          <span class="inews_ms">[field:info/]……</span><br/>
+          <span class="inews_more"><a href="[field:arcurl/]" >查看详细 +</a></span> {/dede:arclist} </div>
+        <div class="inews_list clear clr">
+          <ul>
+            {dede:arclist typeid='2' titlelen='70' row='6' orderby='id'}
+            <li><span>[[field:pubdate function="MyDate('y-m-d',@me)"/]]</span><a href="[field:arcurl /]">[field:title /]</a></li>
+            {/dede:arclist}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{dede:include filename="footer.htm"/} 
+<!-- /footer -->
+</body>
+</html>

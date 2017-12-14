@@ -1,0 +1,1 @@
+<a href="[field:typelink/]">+ 家具 Furniture</a>

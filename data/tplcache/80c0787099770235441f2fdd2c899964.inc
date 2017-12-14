@@ -1,0 +1,1 @@
+<a href="[field:typelink/]"><img src="/skin/images/part0_01.jpg"/></a>

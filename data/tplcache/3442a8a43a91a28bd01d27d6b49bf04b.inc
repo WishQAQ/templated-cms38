@@ -1,0 +1,1 @@
+<a href="[field:typelink/]">+ 灯具 Lamp</a>

@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{dede:field.title/}_{dede:global.cfg_webname/}</title>
+<meta name="keywords" content="{dede:field.keywords/}" />
+<meta name="description" content="{dede:field.description function='html2text(@me)'/}" />
+<link href="/skin/css/dedecms.css" rel="stylesheet" media="screen" type="text/css" />
+<script language="javascript" type="text/javascript" src="/skin/js/dedeajax2.js"></script>
+<script language="javascript" type="text/javascript">
+<!--
+function CheckLogin(){
+	var taget_obj = document.getElementById('_ajax_feedback');
+	myajax = new DedeAjax(taget_obj,false,false,'','','');
+	myajax.SendGet2("/member/ajax_feedback.php");
+	DedeXHTTP = null;
+}
+-->
+</script>
+<script type="text/javascript">
+function AutoResizeImage(maxWidth,maxHeight,objImg){
+var img = new Image();
+img.src = objImg.src;
+var hRatio;
+var wRatio;
+var Ratio = 1;
+var w = img.width;
+var h = img.height;
+wRatio = maxWidth / w;
+hRatio = maxHeight / h;
+if (maxWidth ==0 && maxHeight==0){
+Ratio = 1;
+}else if (maxWidth==0){//
+if (hRatio<1) Ratio = hRatio;
+}else if (maxHeight==0){
+if (wRatio<1) Ratio = wRatio;
+}else if (wRatio<1 || hRatio<1){
+Ratio = (wRatio<=hRatio?wRatio:hRatio);
+}
+if (Ratio<1){
+w = w * Ratio;
+h = h * Ratio;
+}
+objImg.height = h;
+objImg.width = w;
+}
+</script>
+</head>
+<body class="picboxview">
+{dede:include filename="head.htm"/} 
+<!-- /header -->
+<div class="w980 center clear clr"> {dede:include filename="left.htm"/} 
+  
+  <!-- /页面右边 -->
+  <div id="right_diy">
+    <div class="right_nav">
+      <div class="right_nav">{dede:include filename="right_nav.htm"/}</div>
+    </div>
+    <div class="right_body clear clr">
+      <div class="viewbox">
+        <div class="lanrenzhijia"> <span id="prev" class="btn prev"></span> <span id="next" class="btn next"></span> <span id="prevTop" class="btn prev"></span> <span id="nextTop" class="btn next"></span>
+          <div id="picBox" class="picBox">
+            <ul class="cf">
+              {dede:productimagelist}
+              <li>
+                <table width='680' border='0' cellspacing='0' cellpadding='0'>
+                  <tr>
+                    <td height='500' align='center' valign='middle'><img src="[field:imgsrc/]" onload='AutoResizeImage(680,500,this)'  /></td>
+                  </tr>
+                </table>
+              </li>
+              {/dede:productimagelist}
+            </ul>
+          </div>
+          <div id="listBox" class="listBox">
+            <ul class="cf">
+              {dede:productimagelist}
+              <li><i class='arr2'></i><img src="[field:imgsrc/]"/></li>
+              {/dede:productimagelist}
+            </ul>
+          </div>
+        </div>
+        <SCRIPT src="/skin/js/lanrenzhijia.js" type=text/javascript></SCRIPT>
+        <div class="content clear clr">{dede:field.body/} </div>
+        <div class="boxoff"> <strong>------分隔线----------------------------</strong> </div>
+        <div class="handle">
+          <div class="context">
+            <ul>
+              <li>{dede:prenext get='pre'/} </li>
+              <li>{dede:prenext get='next'/}</li>
+            </ul>
+          </div>
+          <!-- /context --> 
+        </div>
+        <!-- /handle --> 
+      </div>
+      <!-- /viewbox --> 
+    </div>
+  </div>
+  <!-- /页面右边 --> 
+</div>
+<!-- //底部模板 --> 
+{dede:include filename="footer.htm"/} 
+<!-- /footer -->
+</body>
+</html>

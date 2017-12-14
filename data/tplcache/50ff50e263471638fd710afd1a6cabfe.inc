@@ -1,0 +1,1 @@
+<div><img src="[field:picname/]"  alt="[field:fulltitle/]"></div>
